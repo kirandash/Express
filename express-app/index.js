@@ -7,6 +7,8 @@ const PORT = "3000";
 
 // Basic route to path / with req as GET and res to add to body
 app.get('/', (req, res) => {
+    // Get data first
+    res.json(data); // Send data in response in JSON format
     res.send(`A get request with / route on port ${PORT}`); // Response being sent to route
 });
 

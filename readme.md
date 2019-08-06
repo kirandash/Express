@@ -39,4 +39,11 @@ Mock JSON data: https://www.mockaroo.com/
 app.get('/', (req, res){ res.send('test'); });
 '/': path, req: request(GET, POST, PUT, DELETE) res: response we receive
 
-### 2.4 
+### 2.4 Test endpoints with Postman
+https://www.getpostman.com/downloads/
+Test endpoints
+localhost:3000/newItem
+localhost:3000/item with postman
+
+### 2.5 Create a basic data endpoint
+res.json(data);
