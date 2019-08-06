@@ -31,3 +31,6 @@ For ES6 code support:
 npm install --save-dev babel-cli babel-preset-env babel-preset-stage-0
 Create .babelrc file to include all the presets which will be compiled to support ES6.
 Create index.js file - entrypoint
+
+### 2.2 Add data to Server
+Mock JSON data: https://www.mockaroo.com/
