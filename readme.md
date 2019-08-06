@@ -34,3 +34,9 @@ Create index.js file - entrypoint
 
 ### 2.2 Add data to Server
 Mock JSON data: https://www.mockaroo.com/
+
+### 2.3 Create a basic route
+app.get('/', (req, res){ res.send('test'); });
+'/': path, req: request(GET, POST, PUT, DELETE) res: response we receive
+
+### 2.4 
