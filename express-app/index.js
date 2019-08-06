@@ -5,6 +5,12 @@ import data from './data/data.json';
 const app = express();
 const PORT = "3000";
 
+// This is for the public folder but on path /, since path is not mentioned and defaulted to '/'
+app.use(express.static('public')); // Add a static route for file serving
+
+// This is for images folder and on path images
+app.use('/app-images', express.static('images'));
+
 // Basic route to path / with req as GET and res to add to body
 app.get('/', (req, res) => {
     // Get data first

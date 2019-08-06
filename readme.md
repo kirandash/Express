@@ -47,3 +47,9 @@ localhost:3000/item with postman
 
 ### 2.5 Create a basic data endpoint
 res.json(data);
+
+### 2.6 Add a static route for file serving
+app.use(express.static('public'));
+http://localhost:3000/tent.jpg
+app.use('/images', express.static('images'));
+http://localhost:3000/app-images/rocket.jpg
