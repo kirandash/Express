@@ -73,3 +73,8 @@ Response methods:
 ### 3.4 Routing: Chaining
 Helps write refactored/cleaner code.
 app.route('/item').get().put().delete();
+
+## 4 Middleware with Express
+### 4.1 Basic middleware with Express
+Middleware: Functions that Has access to req, res object in our express app.
+http://expressjs.com/en/guide/using-middleware.html

@@ -26,9 +26,13 @@ app.get('/imaage-download', (req, res, next) => {
 });
 
 app.get('/item/:id', (req, res, next) => {
+    // Middleware to pull the data
     // console.log(req.params.id);
     let user = Number(req.params.id); // Since id comes as a string
     console.log('user id: ' + user);
+    console.log(`Request URL is: ${req.originalUrl}`);
+    console.log(`Request method/type is: ${req.method}`);
+    // everything above the res.send command is middleware
     res.send(data[user]); // Sending data from id to client/browser
     next(); // next helps to execute next code block
 }, (req, res) => {
