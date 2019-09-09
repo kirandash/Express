@@ -91,3 +91,9 @@ hello = URLEncoded+data+is+cool
 2. express.json(): Allows to use JSON in data
 3. express.urlencoded({extended: true}); Allows use of urlencoded data. extended: true means stringify method is of type ps
 In postman, while testing change header: content-type to application/json or application/x-www-form-urlencoded and body as raw or urlencoded
+
+### 4.3 Error-handling middleware
+1. throw new Error(); // manually creating error 
+2. app.use((err, req, res, next) 
+3. err.stack
+Always keep error handling code in the end before app.listen

@@ -59,6 +59,7 @@ app.post('/newItem', (req, res) => {
 // Chaining multiple methods 'get', 'put', 'delete' to one Route 'item'
 app.route('/item')
     .get((req, res) => {
+        throw new Error();
         res.send(`A chained GET request with /item route on port ${PORT}`); // Response being sent to route
     })
     .put((req, res) => {
@@ -76,6 +77,12 @@ app.route('/item')
 /*app.delete('/item', (req, res) => {
     res.send(`A DELETE request with /item route on port ${PORT}`); // Response being sent to route
 });*/
+
+// Always keep your error handler at the end right before listen
+app.use((err, req, res, next) => {
+    // Will handle the error manually created at line 62
+    res.status(500).send(`Red Alert! Red Alert! ${err.stack}`);
+});
 
 app.listen(PORT, () => {
     console.log(`The application has been started on port: ${PORT}`);
