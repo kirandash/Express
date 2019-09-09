@@ -126,3 +126,6 @@ Note: Setting proxy has to be done carefully with security concerns in mind!
 3. Use helmet's collection of security middleware
 4. Use cookie's securely
 5. Take a look at the Node security checklist and stay informed on known issues
+
+### 5.4 Real-time web with Express
+https://socket.io/
