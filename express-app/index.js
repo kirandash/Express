@@ -23,6 +23,9 @@ app.use('/app-images', express.static('images'));
 // Loading favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.jpg')));
 
+// This is for proxies
+app.set('trust proxy', 'loopback');
+
 // Basic route to path / with req as GET and res to add to body
 app.get('/', (req, res) => {
     // Get data first

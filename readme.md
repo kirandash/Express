@@ -115,3 +115,7 @@ set DEBUG=express:* & node index.js
 
 2. Or set script in package.json file
 npm run debug
+
+### 5.2 Using Express behind a proxy
+https://expressjs.com/en/guide/behind-proxies.html
+Note: Setting proxy has to be done carefully with security concerns in mind!
