@@ -31,6 +31,8 @@ For ES6 code support:
 npm install --save-dev babel-cli babel-preset-env babel-preset-stage-0
 Create .babelrc file to include all the presets which will be compiled to support ES6.
 Create index.js file - entrypoint
+1. npm start - start server
+2. rs - restart server
 
 ### 2.2 Add data to Server
 Mock JSON data: https://www.mockaroo.com/
@@ -78,3 +80,14 @@ app.route('/item').get().put().delete();
 ### 4.1 Basic middleware with Express
 Middleware: Functions that Has access to req, res object in our express app.
 http://expressjs.com/en/guide/using-middleware.html
+
+### 4.2 Built-in middleware (express.json() and express.urlencoded())
+1. express.static()
+Most types of data: json and urlencoded
+JSON data
+{"hello":"JSON data is cool"}
+URL Encoded data
+hello = URLEncoded+data+is+cool
+2. express.json(): Allows to use JSON in data
+3. express.urlencoded({extended: true}); Allows use of urlencoded data. extended: true means stringify method is of type ps
+In postman, while testing change header: content-type to application/json or application/x-www-form-urlencoded and body as raw or urlencoded

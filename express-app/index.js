@@ -8,6 +8,10 @@ const PORT = "3000";
 // This is for the public folder but on path /, since path is not mentioned and defaulted to '/'
 app.use(express.static('public')); // Add a static route for file serving
 
+// Enabling JSON data type for use from DB
+// app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 // This is for images folder and on path images
 app.use('/app-images', express.static('images'));
 
@@ -40,9 +44,16 @@ app.get('/item/:id', (req, res, next) => {
     console.log('Did you get the right data?');
 });
 
+// Types of data we will have to work with while sending data to DB
+// JSON data
+// {"hello":"JSON data is cool"}
+// URL Encoded data
+// hello = URLEncoded+data+is+cool
 app.post('/newItem', (req, res) => {
     // route handler - content inside a route call
-    res.send(`A POST request with /newItem route on port ${PORT}`); // Response being sent to route
+    console.log(req.body);
+    res.send(req.body);
+    // res.send(`A POST request with /newItem route on port ${PORT}`); // Response being sent to route
 });
 
 // Chaining multiple methods 'get', 'put', 'delete' to one Route 'item'
