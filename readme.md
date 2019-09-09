@@ -97,3 +97,10 @@ In postman, while testing change header: content-type to application/json or app
 2. app.use((err, req, res, next) 
 3. err.stack
 Always keep error handling code in the end before app.listen
+
+### 4.4 Third-party middleware
+http://expressjs.com/en/resources/middleware.html
+Ex: Adding a favicon
+http://expressjs.com/en/resources/middleware/serve-favicon.html
+cd express-app
+npm install serve-favicon

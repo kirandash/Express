@@ -1,5 +1,10 @@
 // Entry point of our project
 import express from "express";
+
+// import 3rd party middlewares
+import favicon from "serve-favicon"; // Need to install npm
+import path from "path"; // built in package
+
 import data from './data/data.json';
 
 const app = express();
@@ -14,6 +19,9 @@ app.use(express.urlencoded({extended: true}));
 
 // This is for images folder and on path images
 app.use('/app-images', express.static('images'));
+
+// Loading favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.jpg')));
 
 // Basic route to path / with req as GET and res to add to body
 app.get('/', (req, res) => {
