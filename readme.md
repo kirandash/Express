@@ -53,3 +53,8 @@ app.use(express.static('public'));
 http://localhost:3000/tent.jpg
 app.use('/images', express.static('images'));
 http://localhost:3000/app-images/rocket.jpg
+
+## 3 Routing with Express
+### 3.1 Routing: Parameters
+app.get('/item/:id', (req, res) => {....});
+req.params.id

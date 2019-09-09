@@ -18,6 +18,13 @@ app.get('/', (req, res) => {
     res.send(`A get request with / route on port ${PORT}`); // Response being sent to route
 });
 
+app.get('/item/:id', (req, res) => {
+    // console.log(req.params.id);
+    let user = Number(req.params.id); // Since id comes as a string
+    console.log('user id: ' + user);
+    res.send(data[user]); // Sending data from id to client/browser
+});
+
 app.post('/newItem', (req, res) => {
     res.send(`A POST request with /newItem route on port ${PORT}`); // Response being sent to route
 });
@@ -33,5 +40,5 @@ app.delete('/item', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`The application has been started on port: ${PORT}`);
-    console.log(data); // Logged in command line console. Since these are being done on the server not on the frontend
+    // console.log(data); // Logged in command line console. Since these are being done on the server not on the frontend
 });
