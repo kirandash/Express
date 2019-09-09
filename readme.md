@@ -104,3 +104,14 @@ Ex: Adding a favicon
 http://expressjs.com/en/resources/middleware/serve-favicon.html
 cd express-app
 npm install serve-favicon
+
+## 5. Advanced Topics in Express
+### 5.1 Debugging in Express
+1. Run command:
+For Mac/Linux
+DEBUG=express:* node index.js
+For Windows
+set DEBUG=express:* & node index.js
+
+2. Or set script in package.json file
+npm run debug
