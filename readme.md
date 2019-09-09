@@ -62,3 +62,10 @@ req.params.id
 ### 3.2 Routing: Route handlers
 1. Block of code inside route.
 2. Multiple routing handlers can be there per routing path but note that only one res.send can be used.
+
+### 3.3 Routing: Common methods (end, redirect, download etc)
+http://expressjs.com/en/guide/routing.html
+Response methods:
+1. res.end(): to end connection with API. Rarely used
+2. res.redirect(url)
+3. res.download(url)

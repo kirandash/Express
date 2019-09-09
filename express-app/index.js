@@ -18,6 +18,13 @@ app.get('/', (req, res) => {
     res.send(`A get request with / route on port ${PORT}`); // Response being sent to route
 });
 
+app.get('/imaage-download', (req, res, next) => {
+    res.download("images/rocket.jpg"); // Only one res statement at a time
+    // res.redirect("https://linkedin.com");
+    // res.end(); // End will end api connection here and thus will not execute next block statements
+    // res.send('Call to happen in end of this block!');
+});
+
 app.get('/item/:id', (req, res, next) => {
     // console.log(req.params.id);
     let user = Number(req.params.id); // Since id comes as a string
