@@ -41,14 +41,26 @@ app.post('/newItem', (req, res) => {
     res.send(`A POST request with /newItem route on port ${PORT}`); // Response being sent to route
 });
 
-// Update existing item: put
-app.put('/item', (req, res) => {
-    res.send(`A PUT request with /item route on port ${PORT}`); // Response being sent to route
-});
+// Chaining multiple methods 'get', 'put', 'delete' to one Route 'item'
+app.route('/item')
+    .get((req, res) => {
+        res.send(`A chained GET request with /item route on port ${PORT}`); // Response being sent to route
+    })
+    .put((req, res) => {
+        res.send(`A chained PUT request with /item route on port ${PORT}`); // Response being sent to route
+    })
+    .delete((req, res) => {
+        res.send(`A chained DELETE request with /item route on port ${PORT}`);
+    });
 
-app.delete('/item', (req, res) => {
+// Update existing item: put
+/*app.put('/item', (req, res) => {
+    res.send(`A PUT request with /item route on port ${PORT}`); // Response being sent to route
+});*/
+
+/*app.delete('/item', (req, res) => {
     res.send(`A DELETE request with /item route on port ${PORT}`); // Response being sent to route
-});
+});*/
 
 app.listen(PORT, () => {
     console.log(`The application has been started on port: ${PORT}`);

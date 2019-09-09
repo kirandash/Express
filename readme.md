@@ -69,3 +69,7 @@ Response methods:
 1. res.end(): to end connection with API. Rarely used
 2. res.redirect(url)
 3. res.download(url)
+
+### 3.4 Routing: Chaining
+Helps write refactored/cleaner code.
+app.route('/item').get().put().delete();
