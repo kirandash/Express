@@ -119,3 +119,10 @@ npm run debug
 ### 5.2 Using Express behind a proxy
 https://expressjs.com/en/guide/behind-proxies.html
 Note: Setting proxy has to be done carefully with security concerns in mind!
+
+### 5.3 Security overview for Express
+1. Always keep up to date and secured dependencies
+2. Use Transport Layer Security (TLS) for sensitive data
+3. Use helmet's collection of security middleware
+4. Use cookie's securely
+5. Take a look at the Node security checklist and stay informed on known issues
