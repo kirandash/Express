@@ -58,3 +58,7 @@ http://localhost:3000/app-images/rocket.jpg
 ### 3.1 Routing: Parameters
 app.get('/item/:id', (req, res) => {....});
 req.params.id
+
+### 3.2 Routing: Route handlers
+1. Block of code inside route.
+2. Multiple routing handlers can be there per routing path but note that only one res.send can be used.

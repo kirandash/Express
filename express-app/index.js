@@ -18,14 +18,19 @@ app.get('/', (req, res) => {
     res.send(`A get request with / route on port ${PORT}`); // Response being sent to route
 });
 
-app.get('/item/:id', (req, res) => {
+app.get('/item/:id', (req, res, next) => {
     // console.log(req.params.id);
     let user = Number(req.params.id); // Since id comes as a string
     console.log('user id: ' + user);
     res.send(data[user]); // Sending data from id to client/browser
+    next(); // next helps to execute next code block
+}, (req, res) => {
+    // since next is being called, this routing handler will also execute but we can not have res.send here since already used in previous block
+    console.log('Did you get the right data?');
 });
 
 app.post('/newItem', (req, res) => {
+    // route handler - content inside a route call
     res.send(`A POST request with /newItem route on port ${PORT}`); // Response being sent to route
 });
 
